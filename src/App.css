@@ -5,15 +5,47 @@
 }
 
 body {
-  background-color: orange;
+  background: radial-gradient(gold, orangered, blue);
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 h1 {
-  color: red;
+  color: blue;
   font-size: 4rem;
 }
 
 #mainDiv {
   display: flex;
-  justify-content: space-around;
+  justify-content:space-evenly;
+}
+
+.task {
+  background-color: gold;
+  border: 5px solid blue;
+  padding: 20px;
+  color: blue;
+}
+
+th {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+button {
+  background-color: orangered;
+  margin: 5px 10px;
+  font-weight: bold;
+  color: wheat;
+  padding: 5px;
+  font-size: medium;
+}
+
+button:hover {
+background-color: orange;
+}
+input {
+  font-size: 1.25rem;
+  color: blue;
+  font-weight: bold;
 }

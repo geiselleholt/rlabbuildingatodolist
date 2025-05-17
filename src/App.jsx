@@ -12,9 +12,13 @@ function App() {
     <>
       <h1>To Do List</h1>
       <div id="mainDiv">
-        <AddTaskForm dispatch={dispatch} />
+        <section class="task">
+          <AddTaskForm dispatch={dispatch} />
+        </section>
         <br />
-        <ToDoTable toDoList={toDoList} dispatch={dispatch} />
+        <section class="task">
+          <ToDoTable toDoList={toDoList} dispatch={dispatch} />
+        </section>
       </div>
     </>
   );
