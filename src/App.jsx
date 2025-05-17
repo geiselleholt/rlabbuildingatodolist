@@ -1,22 +1,23 @@
-import { useState } from 'react'
-import './App.css'
-import NewTaskForm from './compenents/NewTaskForm'
-import ToDoTable from './compenents/ToDoTable'
-import taskData from './utilities/taskData'
+import "./App.css";
+import { useReducer } from "react";
+import taskData from "./utilities/taskData";
+import ToDoTable from "./compenents/ToDoTable";
+import taskReducer from "./reducers/taskReducer";
+import AddTaskForm from "./compenents/AddTaskForm";
 
 function App() {
-  const [toDoList, setToDoList] = useState(taskData);
+  const [toDoList, dispatch] = useReducer(taskReducer, taskData);
 
-
-  console.log(`App: ${toDoList}`)
   return (
     <>
       <h1>To Do List</h1>
-      <NewTaskForm toDoList={toDoList} setToDoList={setToDoList} />
-      <br />
-      <ToDoTable toDoList={toDoList}/>
+      <div id="mainDiv">
+        <AddTaskForm dispatch={dispatch} />
+        <br />
+        <ToDoTable toDoList={toDoList} dispatch={dispatch} />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

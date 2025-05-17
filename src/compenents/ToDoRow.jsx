@@ -1,40 +1,48 @@
-import EditTaskForm from "./EditTaskForm";
 import { useState } from "react";
-import taskData from "../utilities/taskData";
+import EditTaskForm from "./EditTaskForm";
 
-export default function ToDoRow({ id, task, completed, setToDoList }) {
-  const [toggle, setToggle] = useState(true);
+export default function ToDoRow({ id, task, completed, dispatch }) {
+  const [isEditing, setIsEditing] = useState(false);
 
-  function handleDelete(e) {
+  function handleToggleCompleted() {
+    dispatch({ type: "toggleCompleted", payload: { id: id } });
+  }
+
+  function handleDelete() {
     let answer = confirm("Are you sure you want to delete this task?");
     if (!answer) {
       return;
     }
-
-    const updatedTaskData = taskData.filter((u) => u.id !== e.target.id);
-    setToDoList(updatedTaskData);
-    alert("Successfully Deleted!");
+    dispatch({ type: "deleteTask", payload: { id: id } });
   }
 
   return (
     <>
-      {toggle ? (
-        <tr>
-          <td>{task}</td>
-          <td>
-            <button onClick={() => setToggle((t) => !t)}>Edit</button>
-          </td>
-          <td>
-            <button onClick={handleDelete}>Delete</button>
-          </td>
-        </tr>
-      ) : (
+      {isEditing ? (
         <EditTaskForm
-          setToggle={setToggle}
           id={id}
           task={task}
           completed={completed}
+          setIsEditing={setIsEditing}
+          dispatch={dispatch}
         />
+      ) : (
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              checked={completed}
+              onChange={handleToggleCompleted}
+            />
+          </td>
+          <td>{task}</td>
+          <td>
+            <button onClick={() => setIsEditing(true)}>Edit</button>
+            <button onClick={handleDelete} disabled={!completed}>
+              Delete
+            </button>
+          </td>
+        </tr>
       )}
     </>
   );

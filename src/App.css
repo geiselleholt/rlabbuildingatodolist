@@ -12,3 +12,8 @@ h1 {
   color: red;
   font-size: 4rem;
 }
+
+#mainDiv {
+  display: flex;
+  justify-content: space-around;
+}
