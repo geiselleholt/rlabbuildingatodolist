@@ -1,4 +1,4 @@
-import EditTaskForm from "./EditForm";
+import EditTaskForm from "./EditTaskForm";
 import { useState } from "react";
 import taskData from "../utilities/taskData";
 
@@ -6,7 +6,7 @@ export default function ToDoRow({ id, task, completed, setToDoList }) {
   const [toggle, setToggle] = useState(true);
 
   function handleDelete(e) {
-    let answer = confirm("Are you sure you want to delete this item?");
+    let answer = confirm("Are you sure you want to delete this task?");
     if (!answer) {
       return;
     }

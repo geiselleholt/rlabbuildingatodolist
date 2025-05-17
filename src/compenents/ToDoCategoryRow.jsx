@@ -1,7 +1,7 @@
 export default function ToDoCategoryRow({ category }) {
   return (
     <tr>
-      <th colSpan={4}>{category}</th>
+      <th colSpan={3}>{category}</th>
     </tr>
   );
 }

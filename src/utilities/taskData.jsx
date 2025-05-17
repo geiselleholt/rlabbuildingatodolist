@@ -1,24 +1,24 @@
 const taskData = [
   {
     id: 1,
-    task: "delectus aut autem",
+    task: "study for KBA",
     completed: false,
   },
   {
     id: 2,
-    task: "quis ut nam facilis et officia qui",
+    task: "start SBA",
     completed: false,
   },
   {
     id: 3,
-    task: "fugiat veniam minus",
+    task: "brainstorm for capstone",
     completed: false,
   },
   {
     id: 4,
-    task: "et porro tempora",
+    task: "panic",
     completed: true,
   },
 ];
 
-export default initialState;
+export default taskData;

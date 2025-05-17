@@ -1,28 +1,30 @@
 import { useState } from "react";
-import taskData from '../utilities/taskData.jsx'
+import taskData from "../utilities/taskData.jsx";
 
 export default function NewTaskForm({ toDoList, setToDoList }) {
   const [formData, setFormData] = useState({
-    id: "",
+    id: 0,
     task: "",
-    completed: "false",
+    completed: false,
   });
 
   function handleChange(e) {
-    if (e.target.name == "completed") {
+    if (e.target.task == "completed") {
       setFormData({ ...formData, completed: !formData.completed });
     } else {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
+      setFormData({ ...formData, [e.target.task]: e.target.value });
     }
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-      let newTaskData = taskData.append(formData)
+    const newTaskData = {
+      ...formData,
+      id: Date.now(),
+    };
 
-      setToDoList(newTaskData);
-
+    setToDoList(newTaskData);
   }
 
   return (
