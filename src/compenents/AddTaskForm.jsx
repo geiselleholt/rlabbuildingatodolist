@@ -8,6 +8,7 @@ export default function NewTaskForm({ dispatch }) {
   function handleChange(e) {
     // console.log(e.target)
     const { name, value } = e.target;
+    
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,

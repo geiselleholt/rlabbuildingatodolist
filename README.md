@@ -1,4 +1,17 @@
+## Hafa Adai 💮
 
+### Welcome to my graded Lab, Building a Todo List, using React and useReducer 🤩
+
+### The objectives for this Lab were to:
+- Use the useReducer and/or useImmerReducer hook to manage state with reducer functions.
+- Use useState in places where reducers are not appropriate or necessary.
+- Implement controlled forms and inputs.
+- Effectively decide where pieces of state should live.
+- Use conditional rendering and conditional styling to provide a positive, interactive user experience.
+- Create a complete React application from a set of desired functionality.
+
+
+### The requirements were as follows:
 1) A heading labeling it as a "todo list." ✅
 
 2) A list of "todo" items, which are strings listing activities to be accomplished (e.g. "find that missing sock"). ✅
